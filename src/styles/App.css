@@ -1,1 +1,46 @@
+@font-face {
+  font-family: "Red Hat Text";   /*Can be any text*/
+  src: local("Red Hat Text"),
+    url("../assets/fonts/RedHatText-VariableFont_wght.ttf") format("truetype");
+}
 
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Text";
+    font-weight: normal;
+    font-size: var(--fs-medium);
+  }
+  
+  /* COLORS + FONT*/
+  
+  :root {
+    --clr-red: hsl(14, 86%, 42%);
+    --clr-reen:  hsl(159, 69%, 38%);
+    
+    --clr-pink50:hsl(20, 50%, 98%);
+    --clr-pink100:hsl(13, 31%, 94%);
+    --clr-pink300:hsl(14, 25%, 72%);
+    --clr-pink400:hsl(7, 20%, 60%);
+    --clr-pink500:hsl(12, 20%, 44%);
+    --clr-pink900:hsl(14, 65%, 9%);
+  
+    --fs-small: 14px;
+    --fs-medium: 16px;
+    --fs-large: 24px;
+    --fs-extralarge: 40px;
+  }
+  
+  /* STYLE */
+  
+  body {
+    background-color: var(--clr-pink50);
+  }
+  
+  .app {
+    padding: 8%;
+    display: flex;
+    gap: 35px;
+  }

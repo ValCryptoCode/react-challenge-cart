@@ -1,0 +1,52 @@
+.desserts {
+    flex: 1;
+  
+    h1 {
+      font-size: var(--fs-extralarge);
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+  }
+  
+  .grid-desserts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  
+  .item {
+  
+    h3 {
+      margin-block: 30px 5px;
+      color: var(--clr-pink400);
+    }
+  
+    h2 {
+      font-weight: 600;
+    }
+  
+    p {
+      color: var(--clr-red);
+      font-weight: 600;
+    }
+  }
+  
+  .container {
+    position: relative;
+  
+    .imgItem {
+      width: 100%;
+      aspect-ratio: 10/9;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  
+    .active {
+      background-color: var(--clr-red);
+      color: white;
+  
+      &:hover{
+        color: white;
+      }
+    }
+}
