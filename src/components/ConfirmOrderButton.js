@@ -1,7 +1,13 @@
 import '../styles/ConfirmOrderButton.css'
 
-function ConfirmOrderButton() {
-    return <input type="button" value="Confirm Order" />
+function ConfirmOrderButton({ updateIsOrderConfirmed }) {
+    function orderConfirmed() {
+        updateIsOrderConfirmed(true)
+    }
+
+    return (
+        <input type="button" value="Confirm Order" onClick={orderConfirmed} />
+    )
 }
 
 export default ConfirmOrderButton

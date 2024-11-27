@@ -5,7 +5,7 @@ import ConfirmOrderButton from './ConfirmOrderButton'
 import TotalCart from './TotalCart'
 import EmptyCart from './EmptyCart'
 
-function Cart({ cart, updateCart }) {
+function Cart({ cart, updateCart, updateIsOrderConfirmed }) {
     const totalPrice = cart.reduce(
         (acc, item) => acc + item.quantity * item.price,
         0
@@ -27,7 +27,9 @@ function Cart({ cart, updateCart }) {
                 </ul>
                 <TotalCart totalPrice={totalPrice} />
                 <CarbonNeutral />
-                <ConfirmOrderButton />
+                <ConfirmOrderButton
+                    updateIsOrderConfirmed={updateIsOrderConfirmed}
+                />
             </div>
         )
     }

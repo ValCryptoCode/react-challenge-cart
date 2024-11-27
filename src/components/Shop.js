@@ -11,7 +11,13 @@ function Shop({ cart, updateCart }) {
                     <div key={`${dessert.name}-${index}`} className="item">
                         <div className="container">
                             <img
-                                className="imgItem"
+                                className={
+                                    cart.find(
+                                        (item) => item.name === dessert.name
+                                    )
+                                        ? 'imgItem selected'
+                                        : 'imgItem'
+                                }
                                 src={dessert.image.desktop}
                                 alt={dessert.name}
                             />
@@ -23,7 +29,7 @@ function Shop({ cart, updateCart }) {
                         </div>
                         <h3>{dessert.category}</h3>
                         <h2>{dessert.name}</h2>
-                        <p>${dessert.price}</p>
+                        <p>${dessert.price.toFixed(2)}</p>
                     </div>
                 ))}
             </div>

@@ -13,9 +13,11 @@ function ItemCart({ cart, updateCart }) {
                             <span className="quantity-item">
                                 {item.quantity}x
                             </span>
-                            <span className="price-item">@${item.price}</span>
+                            <span className="price-item">
+                                @${item.price.toFixed(2)}
+                            </span>
                             <span className="total-price-item">
-                                ${item.price * item.quantity}
+                                ${(item.price * item.quantity).toFixed(2)}
                             </span>
                         </div>
                         <div>
