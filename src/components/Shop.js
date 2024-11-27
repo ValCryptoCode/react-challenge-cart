@@ -2,7 +2,7 @@ import { data } from '../data/data'
 import Button from './Button'
 import '../styles/Shop.css'
 
-function Shop({ cart, setCart }) {
+function Shop({ cart, updateCart }) {
     return (
         <div className="desserts">
             <h1>Desserts</h1>
@@ -17,9 +17,8 @@ function Shop({ cart, setCart }) {
                             />
                             <Button
                                 cart={cart}
-                                setCart={setCart}
-                                name={dessert.name}
-                                price={dessert.price}
+                                updateCart={updateCart}
+                                selectedItem={dessert}
                             />
                         </div>
                         <h3>{dessert.category}</h3>

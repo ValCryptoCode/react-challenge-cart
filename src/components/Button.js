@@ -3,51 +3,51 @@ import decrementQty from '../assets/images/icon-decrement-quantity.svg'
 import incrementQty from '../assets/images/icon-increment-quantity.svg'
 import '../styles/Button.css'
 
-function Button({ cart, setCart, name, price }) {
-    function increment(name, price) {
-        const target = cart.find((dessert) => dessert.name === name)
-        if (target) {
-            const filteredCart = cart.filter((dessert) => dessert.name !== name)
-            setCart([
-                ...filteredCart,
-                {
-                    name,
-                    price,
-                    quantity: target.quantity + 1,
-                },
-            ])
+function Button({ cart, updateCart, selectedItem }) {
+    const currentItem = cart.find((item) => item.name === selectedItem.name)
+    function increment() {
+        if (currentItem) {
+            const updatedCart = cart.map((item) =>
+                item.name === selectedItem.name
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : { ...item }
+            )
+            updateCart(updatedCart)
         } else {
-            setCart([...cart, { name, price, quantity: 1 }])
+            updateCart([...cart, { ...selectedItem, quantity: 1 }])
         }
     }
 
-    // const selectedItem = cart.find((item) => item.name === name)
-    // console.log(selectedItem)
-    // function decrement() {
-    //     setCart(cart - 1)
-    // }
-    // if (name === 0) {
-    return (
-        <button
-            className="btn-addToCart"
-            onClick={() => increment(name, price)}
-        >
-            <img src={addToCart} alt="Add to cart" />
-            <span>Add to cart</span>
-        </button>
-    )
-    // } else {
-    //     return (
-    //         <div className="btn-addToCart changeQty">
-    //             <button onClick={increment}>
-    //                 <img src={decrementQty} alt="Increment" />
-    //             </button>
-    //             <button onClick={increment}>
-    //                 <img src={incrementQty} alt="Decrement" />
-    //             </button>
-    //         </div>
-    //     )
-    // }
+    function decrement() {
+        const updatedCart = cart.map((item) =>
+            item.name === selectedItem.name
+                ? { ...item, quantity: item.quantity - 1 }
+                : { ...item }
+        )
+        updateCart(updatedCart)
+    }
+
+    // AFFICHAGE //
+
+    if (currentItem && currentItem.quantity > 0) {
+        return (
+            <div className="btn-addToCart changeQty">
+                <button onClick={decrement}>
+                    <img src={decrementQty} alt="decrement" />
+                </button>
+                <button onClick={increment}>
+                    <img src={incrementQty} alt="increment" />
+                </button>
+            </div>
+        )
+    } else {
+        return (
+            <button className="btn-addToCart" onClick={increment}>
+                <img src={addToCart} alt="Add to cart" />
+                <span>Add to cart</span>
+            </button>
+        )
+    }
 }
 
 export default Button

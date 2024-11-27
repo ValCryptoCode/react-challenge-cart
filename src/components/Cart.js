@@ -1,5 +1,6 @@
 import emptyCart from '../assets/images/illustration-empty-cart.svg'
 import '../styles/Cart.css'
+import ItemCart from './ItemCart'
 
 function Cart({ cart }) {
     const totalPrice = cart.reduce(
@@ -22,14 +23,7 @@ function Cart({ cart }) {
             <div className="cart">
                 <h2>Your Cart ({numberItem})</h2>
                 <ul>
-                    {cart.map((item, index) => (
-                        <li key={`${item.name}-${index}`}>
-                            <span> {item.name} </span>
-                            <span> {item.quantity}x </span>
-                            <span> @${item.price} </span>
-                            <span> -${item.price * item.quantity} </span>
-                        </li>
-                    ))}
+                    <ItemCart cart={cart} />
                 </ul>
                 <div>
                     <span>Order Total: </span>
