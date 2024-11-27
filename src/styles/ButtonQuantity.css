@@ -1,0 +1,37 @@
+.btn-quantity {
+    background-color: var(--clr-red);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+
+    span {
+        cursor: default;
+    }
+}
+
+.btn-increment, .btn-decrement {
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: var(--clr-red);
+    margin-inline: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+
+    &:hover{
+        color: var(--clr-red);
+        background-color: white;
+
+        svg {
+            stroke: var(--clr-red);
+        }
+    }    
+    
+    svg{
+      margin: auto;
+      stroke: white;
+    }
+}

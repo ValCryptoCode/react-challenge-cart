@@ -1,0 +1,21 @@
+.carbon-neutral{
+    border-radius: 10px;
+    background-color:  var(--clr-pink50);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg{
+    margin-inline: 5px;
+    }
+
+    span{
+        font-size: var(--fs-small);
+    }
+
+    strong{
+        font-size: var(--fs-small);
+        font-weight: 650;
+    }
+}

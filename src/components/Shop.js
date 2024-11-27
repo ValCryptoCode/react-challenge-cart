@@ -1,5 +1,5 @@
 import { data } from '../data/data'
-import Button from './Button'
+import ButtonAddToCart from './ButtonAddToCart'
 import '../styles/Shop.css'
 
 function Shop({ cart, updateCart }) {
@@ -15,7 +15,7 @@ function Shop({ cart, updateCart }) {
                                 src={dessert.image.desktop}
                                 alt={dessert.name}
                             />
-                            <Button
+                            <ButtonAddToCart
                                 cart={cart}
                                 updateCart={updateCart}
                                 selectedItem={dessert}

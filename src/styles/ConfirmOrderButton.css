@@ -1,0 +1,15 @@
+input{
+    cursor: pointer;
+    font-size: var(--fs-small);
+    background-color: var(--clr-red);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    margin-block: 20px;
+
+    &:hover{
+        filter: brightness(80%);
+    }
+}

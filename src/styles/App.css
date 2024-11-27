@@ -12,6 +12,7 @@
     font-family: "Red Hat Text";
     font-weight: normal;
     font-size: var(--fs-medium);
+    list-style: none;
   }
   
   /* COLORS + FONT*/

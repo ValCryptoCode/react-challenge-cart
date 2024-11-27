@@ -1,6 +1,9 @@
 import emptyCart from '../assets/images/illustration-empty-cart.svg'
 import '../styles/Cart.css'
 import ItemCart from './ItemCart'
+import CarbonNeutral from './CarbonNeutral'
+import ConfirmOrderButton from './ConfirmOrderButton'
+import TotalCart from './TotalCart'
 
 function Cart({ cart }) {
     const totalPrice = cart.reduce(
@@ -25,10 +28,9 @@ function Cart({ cart }) {
                 <ul>
                     <ItemCart cart={cart} />
                 </ul>
-                <div>
-                    <span>Order Total: </span>
-                    <span>${totalPrice}</span>
-                </div>
+                <TotalCart totalPrice={totalPrice} />
+                <CarbonNeutral />
+                <ConfirmOrderButton />
             </div>
         )
     }

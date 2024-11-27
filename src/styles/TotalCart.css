@@ -1,0 +1,11 @@
+.total-cart{
+    padding-block: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .total-price{
+    font-size: var(--fs-large);
+    font-weight: 500;
+  }
