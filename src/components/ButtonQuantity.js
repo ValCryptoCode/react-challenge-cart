@@ -24,7 +24,11 @@ function ButtonQuantity({ value, updateCart, cart, selectedItem }) {
                 ? { ...item, quantity: item.quantity - 1 }
                 : { ...item }
         )
-        updateCart(updatedCart)
+
+        //Suppression d'item si quantity = 0
+        const filteredCart = updatedCart.filter((item) => item.quantity !== 0)
+
+        updateCart(filteredCart)
     }
 
     // Affichage boutton (-)

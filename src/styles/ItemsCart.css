@@ -1,0 +1,30 @@
+.items-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+    padding-block: 10px;
+    border-bottom: 2px solid var(--clr-pink100);
+
+    span {
+        margin-inline: 8px;
+    }
+}
+
+.title-item {
+    font-weight: 500;
+}
+
+.quantity-item {
+    color: var(--clr-red);
+    font-weight: 500;
+}
+
+.price-item {
+    color: var(--clr-pink400)
+}
+
+.total-price-item {
+    color: var(--clr-pink500);
+    font-weight: 600;
+}

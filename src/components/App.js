@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="app">
             <Shop cart={cart} updateCart={updateCart} />
-            <Cart cart={cart} />
+            <Cart cart={cart} updateCart={updateCart} />
         </div>
     )
 }

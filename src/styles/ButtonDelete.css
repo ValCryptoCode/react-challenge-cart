@@ -1,0 +1,24 @@
+.btn-delete {
+    background-color: white;
+    border: 1px solid var(--clr-pink400);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    aspect-ratio: 1/1;
+
+    &:hover {
+        border: 1px solid var(--clr-pink900);
+
+        svg {
+            stroke: var(--clr-pink900);
+            fill: var(--clr-pink900);
+        }
+    }
+
+    svg {
+        stroke: var(--clr-pink400);
+        fill: var(--clr-pink400);
+    }
+}
